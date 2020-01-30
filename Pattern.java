@@ -2,27 +2,32 @@ import java.util.Scanner;
 
 public class Pattern {
 
-		public static void main(String arg[])
-				
-		{
-				int n;
+	public static void main(String[] args) {
+		
+					Scanner sc=new Scanner(System.in);
 					
-				Scanner sc=new Scanner(System.in);
-				
-				System.out.println("Enter number:");
-				n=sc.nextInt();
-				
-				for(int i=n;i>=0;i--)
-				{
-					for(int j=0;j<=i;j++)
+					System.out.println("Enter your raws:");
+					int n=sc.nextInt();
+					
+					for(int i=0;i<=n;i++)
 					{
-						System.out.print("*");
+						for(int j=n;j>=i;j--)
+						{
+							System.out.print(" ");
+						}
+						
+						for(int k=1;k<=i;k++)
+						{
+							System.out.print("*");
+						}
+						 System.out.println( );
+						
+						
 						
 					}
-					
-					System.out.print("\n");
-					
-				}
-				
-		}
-		}
+							
+		
+
+	}
+
+}
