@@ -1,69 +1,47 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Anagram {
-
-	public static void main(String[] args) {
 	
-						
-					Scanner sc=new Scanner(System.in);
+			public static void main(String arg[])
+			{
+				Scanner sc=new Scanner(System.in);
+				
+				System.out.println("Enter your first String:");
+				String s1=sc.next();
+				
+				System.out.println("Enter your Second String");
+				String s2=sc.next();
+				
+				
+				s1=s1.toLowerCase();
+				s2.toLowerCase();
+				
+				if(s1.length()!=s2.length())
+				{
+					System.out.println("Strings are not Anagram");
+				}
+				
+				else
+				{
+					char[] c1=s1.toCharArray();
+					char[] c2=s2.toCharArray();
 					
-					int len,len1,len2,found=0,not_found=0;
+					Arrays.sort(c1);
+					Arrays.sort(c2);
 					
-					System.out.println("Enter your First String:");
-					
-					String str1=sc.next();
-					
-					System.out.println("Enter your Second String:");
-					
-					String str2=sc.next();
-					
-					len1=str1.length();
-					len2=str2.length();
-					
-					if(len1==len2)
+					if(Arrays.equals(c1,c2)==true)
 					{
 						
-						len=len1;
-						
-						for(int i=0;i<len;i++)
-						{
-						
-								found=0;
-							for(int j=0;j<len;j++)
-							{
-								
-								if(str1.charAt(i)==str2.charAt(j))
-								{
-									found=1;
-									break;
-								}
-								
-							}
-							if(found==0)
-							{
-								not_found=1;
-								break;
-							}
-							
-							
-							
-						}
-						
-						if(not_found==1)
-						{
-							
-							System.out.println("String is not ANAGRAM");
-						}
-						else
-						{
-							System.out.println("String is Anagram");
-						}
-						
+						System.out.println("String are anagram");
 					}
-		
-							
-		
-
-	}
-
+					
+					else
+					{
+						System.out.println("Strings are not anagram");
+					}
+					
+				}
+				
+			}
 }
